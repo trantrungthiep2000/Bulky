@@ -1,5 +1,5 @@
-﻿using BulkyWeb.Data;
-using BulkyWeb.Models;
+﻿using Bulky.DataAccess.Data;
+using Bulky.Model.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,7 +53,7 @@ namespace BulkyWeb.Controllers
             {
                 ModelState.AddModelError("Name", "Display order cannot exactly match the name");
             }
-            
+
             if (ModelState.IsValid)
             {
                 await _applicationDbContext.Categories.AddAsync(category);
@@ -64,7 +64,7 @@ namespace BulkyWeb.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(category);  
+            return View(category);
         }
 
         /// <summary>
