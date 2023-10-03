@@ -14,12 +14,18 @@ namespace Bulky.DataAccess.Repositories
         /// <summary>
         /// CategoryRepository
         /// </summary>
-        public ICategoryRepository CategoryRepository { get; private set; } = default!;
+        public ICategoryRepository CategoryRepository { get; private set; }
+
+        /// <summary>
+        /// ProductRepository
+        /// </summary>
+        public IProductRepository ProductRepository { get; private set; }
 
         public UnitOfWork(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
             CategoryRepository = new CategoryRepository(_applicationDbContext);
+            ProductRepository = new ProductRepository(_applicationDbContext);
         }
     }
 }

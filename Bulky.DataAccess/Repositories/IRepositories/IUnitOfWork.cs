@@ -10,5 +10,10 @@
         /// CategoryRepository
         /// </summary>
         public ICategoryRepository CategoryRepository { get; }
+
+        /// <summary>
+        /// ProductRepository
+        /// </summary>
+        public IProductRepository ProductRepository { get; }
     }
 }
